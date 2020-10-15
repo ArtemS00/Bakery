@@ -46,7 +46,7 @@ export class BunsTableComponent implements OnDestroy {
 
   private startUpdating() {
     setInterval(() => {
-      for (let i = 0; i < this.buns.length; i++) {
+      for (let i = 0; i < this.buns.filter(b => b.waitTime).length; i++) {
         let bun = this.buns[i];
         let waitTime = bun.getWaitTime();
         if (!waitTime) {
